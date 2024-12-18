@@ -4,14 +4,14 @@
   "classifications": ["ASP.NET", "React"],
   "identity": "Clean.Architecture.React.Template.Feature.CSharp",
   "groupIdentity": "Clean.Architecture.Solution.Feature",
-  "name": "Clean Architecture with React.js Feature",
+  "name": "Clean Architecture Feature",
   "shortName": "car-feature",
   "tags": {
     "language": "C#",
     "type": "item"
   },
   "sourceName": "CleanArchitectureTemplateFeature",
-  "description": "A project template for creating an ASP.NET Core Web API using Clean Architecture and React.js",
+  "description": "A project template for creating an ASP.NET Core Web API using Clean Architecture",
   "symbols": {
     "projectName": {
       "type": "parameter",

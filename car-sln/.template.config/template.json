@@ -4,12 +4,12 @@
   "classifications": ["ASP.NET", "React"],
   "identity": "Clean.Architecture.React.Template.CSharp",
   "groupIdentity": "Clean.Architecture.Solution",
-  "name": "Clean Architecture with React.js",
+  "name": "Clean Architecture",
   "shortName": "car-sln",
   "tags": {
     "language": "C#",
     "type": "solution"
   },
   "sourceName": "CleanArchitectureTemplate",
-  "description": "A project template for creating an ASP.NET Core Web API using Clean Architecture and React.js"
+  "description": "A project template for creating an ASP.NET Core Web API using Clean Architecture"
 }
