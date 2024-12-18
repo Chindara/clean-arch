@@ -38,11 +38,11 @@ internal class UpdateCompanyCommandHandler : IRequestHandler<UpdateCompanyComman
             return Result.Failure<Company>(new Error("", "Record not found"));
         }
 
-        Result<Company> companyResult = company.UpdateCompany(request.Name, request.Address1, request.Address2, request.Address3, request.PostalCode, request.Country, request.Telephone, request.Email, request.Website, request.Status);
+        Result<Company> companyResult = company.Update(request.Name, request.Address1, request.Address2, request.Address3, request.PostalCode, request.Country, request.Telephone, request.Email, request.Website, request.Status);
 
         _companyRepository.Update(companyResult.Value);
         await _unitOfWork.SaveChangesAsync(request.UserId, cancellationToken);
 
-        return Result.Success<Company>(company);
+        return Result.Success<Company>(companyResult.Value);
     }
 }

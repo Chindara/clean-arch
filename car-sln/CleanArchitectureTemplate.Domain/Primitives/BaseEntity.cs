@@ -1,4 +1,5 @@
 ﻿namespace CleanArchitectureTemplate.Domain.Primitives;
+
 public abstract class BaseEntity
 {
     protected BaseEntity(long companyId)

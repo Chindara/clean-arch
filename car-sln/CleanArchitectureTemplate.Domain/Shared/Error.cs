@@ -1,4 +1,5 @@
 ﻿namespace CleanArchitectureTemplate.Domain.Shared;
+
 public sealed class Error : IEquatable<Error>
 {
     public static readonly Error None = new Error(string.Empty, string.Empty);
@@ -65,4 +66,3 @@ public sealed class Error : IEquatable<Error>
         return Equals(obj as Error);
     }
 }
-

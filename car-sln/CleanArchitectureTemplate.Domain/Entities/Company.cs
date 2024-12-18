@@ -1,15 +1,10 @@
 ﻿using CleanArchitectureTemplate.Domain.Primitives;
 using CleanArchitectureTemplate.Domain.Shared;
-using System.Text.RegularExpressions;
 
 namespace CleanArchitectureTemplate.Domain.Entities;
 
 public sealed class Company : IAuditableEntity
 {
-    public Company()
-    {
-    }
-
     public long Id { get; private set; }
     public string Name { get; private set; }
     public string Address1 { get; private set; }
@@ -28,18 +23,13 @@ public sealed class Company : IAuditableEntity
 
     public string FullAddress => (Address1 + ", " + Address2 + ", " + Address3 + ", " + Country + ", " + PostalCode).TrimEnd().TrimEnd(',').TrimEnd().TrimEnd(',').TrimEnd().TrimEnd(',').TrimEnd().TrimEnd(',');
 
-
-    public Result<Company> CreateCompany(string name, string address1, string address2, string address3, string postalCode, string country, string telephone, string email, string website)
+    protected Company()
     {
-        if (String.IsNullOrEmpty(name))
-            return Result.Failure<Company>(new Error("Company.Create", "Name is required"));
+        // Parameterless constructor for EF Core
+    }
 
-        if (String.IsNullOrEmpty(address1))
-            return Result.Failure<Company>(new Error("Company.Create", "Address 1 is required"));
-
-        if (String.IsNullOrEmpty(email))
-            return Result.Failure<Company>(new Error("Company.Create", "Email is required"));
-
+    private Company(string name, string address1, string address2, string address3, string postalCode, string country, string telephone, string email, string website)
+    {
         Name = name;
         Address1 = address1;
         Address2 = address2;
@@ -50,11 +40,24 @@ public sealed class Company : IAuditableEntity
         Email = email;
         Website = website;
         Status = (int)RecordStatus.Active;
-
-        return Result.Success<Company>(this);
     }
 
-    public Result<Company> UpdateCompany(string name, string address1, string address2, string address3, string postalCode, string country, string telephone, string email, string website, int status)
+    public static Result<Company> Create(string name, string address1, string address2, string address3, string postalCode, string country, string telephone, string email, string website)
+    {
+        if (String.IsNullOrEmpty(name))
+            return Result.Failure<Company>(new Error("Company.Create", "Name is required"));
+
+        if (String.IsNullOrEmpty(address1))
+            return Result.Failure<Company>(new Error("Company.Create", "Address 1 is required"));
+
+        if (String.IsNullOrEmpty(email))
+            return Result.Failure<Company>(new Error("Company.Create", "Email is required"));
+
+        var record = new Company(name, address1, address2, address3, postalCode, country, telephone, email, website);
+        return Result.Success<Company>(record);
+    }
+
+    public Result<Company> Update(string name, string address1, string address2, string address3, string postalCode, string country, string telephone, string email, string website, int status)
     {
         if (String.IsNullOrEmpty(name))
             return Result.Failure<Company>(new Error("Company.Update", "Name is required"));
@@ -79,7 +82,7 @@ public sealed class Company : IAuditableEntity
         return Result.Success<Company>(this);
     }
 
-    public Result<Company> DeleteCompany()
+    public Result<Company> Delete()
     {
         if (Status == (int)RecordStatus.Deleted)
         {

@@ -1,6 +1,6 @@
 using CleanArchitectureTemplate.Application;
-using CleanArchitectureTemplate.Persistence;
 using CleanArchitectureTemplate.Infrastructure;
+using CleanArchitectureTemplate.Persistence;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

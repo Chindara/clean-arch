@@ -1,6 +1,6 @@
-﻿using MediatR;
+﻿using CleanArchitectureTemplate.Persistence;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CleanArchitectureTemplate.Persistence;
 
 namespace CleanArchitectureTemplate.Application.Companies;
 

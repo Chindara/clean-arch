@@ -1,8 +1,8 @@
-﻿using MediatR;
-using CleanArchitectureTemplate.Application.DTO;
+﻿using CleanArchitectureTemplate.Application.DTO;
 using CleanArchitectureTemplate.Domain.Entities;
 using CleanArchitectureTemplate.Domain.Primitives;
 using CleanArchitectureTemplate.Persistence;
+using MediatR;
 
 namespace CleanArchitectureTemplate.Application.Companies;
 
@@ -20,7 +20,7 @@ internal class GetCompaniesQueryHandler : IRequestHandler<GetCompaniesQuery, Pag
     public async Task<PagedResult<CompaniesResponse>> Handle(GetCompaniesQuery request, CancellationToken cancellationToken)
     {
         IQueryable<Company> companyQuery = _context.Companies;
-        var companyResponseQuery = companyQuery.Where(c =>c.Status != (int)RecordStatus.Deleted)
+        var companyResponseQuery = companyQuery.Where(c => c.Status != (int)RecordStatus.Deleted)
         .Select(c =>
             new CompaniesResponse(
                 c.Id,

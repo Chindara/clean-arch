@@ -2,6 +2,7 @@
 using System.Reflection;
 
 namespace CleanArchitectureTemplate.Domain.Primitives;
+
 public class Enums
 {
     public static int GetEnumKey<TEnum>(string inputString) where TEnum : struct, Enum
