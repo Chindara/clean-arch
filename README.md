@@ -19,12 +19,12 @@ dotnet new install .
 Once installed, create a new solution using the template. 
 
 ```
-dotnet new car-sln -o "<Name of the project>"
+dotnet new ca-sln -o "<Name of the project>"
 ```
 
 To create a new feature
 ```
-dotnet new car-feature -p <Name of the project> -f <Name of the feature>
+dotnet new ca-feature -p <Name of the project> -f <Name of the feature>
 ```
 
 ## Technologies
