@@ -42,5 +42,5 @@ dotnet new list
 dotnet new install . --force
 ```
 ```
-dotnet new uninstall <path>
+dotnet new uninstall
 ```
