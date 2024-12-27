@@ -29,10 +29,11 @@ dotnet new ca-feature -p <Name of the project> -f <Name of the feature>
 
 ## Technologies
 
-* [ASP.NET Core 8](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core)
-* [Entity Framework Core 8](https://docs.microsoft.com/en-us/ef/core/)
-* [MediatR](https://github.com/jbogard/MediatR)
-* [FluentValidation](https://fluentvalidation.net/)
+![.NET 8](https://i.imgur.com/quop3E8.png)
+![EF Core 8](https://i.imgur.com/AcYaj2y.png)
+![Serilog](https://i.imgur.com/i8xjWjs.png)
+![Mediatr](https://i.imgur.com/orjrsa3.png)
+![Fluent Validation](https://i.imgur.com/acPuZJW.png)
 
 ### Template Commands
 ```
