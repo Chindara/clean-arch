@@ -1,6 +1,7 @@
 ﻿using CleanArchitectureTemplate.Domain.Abstractions;
 using CleanArchitectureTemplate.Domain.Entities;
 using CleanArchitectureTemplate.Domain.Shared;
+using FluentValidation;
 using MediatR;
 
 namespace CleanArchitectureTemplate.Application.Users;
@@ -36,5 +37,18 @@ internal class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Res
         await _unitOfWork.SaveChangesAsync(request.UserId, cancellationToken);
 
         return Result.Success<User>(userResult.Value);
+    }
+
+    internal sealed class UpdateUserCommandHandlerValidator : AbstractValidator<UpdateUserCommand>
+    {
+        public UpdateUserCommandHandlerValidator()
+        {
+            RuleFor(x => x.UserId).NotEqual(0).WithMessage("{PropertyName} is required.");
+            RuleFor(x => x.FirstName).NotEmpty().WithMessage("{PropertyName} is required.");
+            RuleFor(x => x.LastName).NotEmpty().WithMessage("{PropertyName} is required.");
+            RuleFor(x => x.Email).NotEmpty().WithMessage("{PropertyName} required.").EmailAddress().WithMessage("{PropertyName} is invalid.");
+            RuleFor(x => x.Mobile).NotEmpty().WithMessage("{PropertyName} required.");
+            RuleFor(x => x.UserType).NotEqual(0).WithMessage("{PropertyName} required.");
+        }
     }
 }
