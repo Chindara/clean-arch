@@ -17,13 +17,15 @@ Clone the repository to your computer. Once you are inside the root directory ru
 dotnet new install .
 ```
 
-Once installed, create a new solution using the template. 
+### Create a new solution
+Use the following command to create the Clean Architecture WebAPI solution
 
 ```
 dotnet new car-sln -o "<Name of the project>"
 ```
+Once the solution is created replace the database credentials in the "appsettings.json" file.
 
-To create a new feature
+### Create a new feature
 ```
 dotnet new car-feature -p <Name of the project> -f <Name of the feature>
 ```
