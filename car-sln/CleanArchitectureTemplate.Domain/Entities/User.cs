@@ -6,10 +6,6 @@ namespace CleanArchitectureTemplate.Domain.Entities;
 
 public sealed class User : BaseEntity, IAuditableEntity
 {
-    public User(long companyId) : base(companyId)
-    {
-    }
-
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public string Email { get; private set; }
@@ -23,7 +19,23 @@ public sealed class User : BaseEntity, IAuditableEntity
     public long ModifiedBy { get; set; }
     public string FullName => FirstName + " " + LastName;
 
-    public Result<User> Create(string firstName, string lastName, string email, string password, string mobile, int userType)
+    protected User() : base(default)
+    {
+        // Parameterless constructor for EF Core
+    }
+
+    private User(long companyId, string firstName, string lastName, string email, string mobile, int userType, string passwordHash) : base(companyId)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Email = email;
+        Mobile = mobile;
+        UserType = userType;
+        PasswordHash = passwordHash;
+        Status = (int)UserStatus.NewUser;
+    }
+
+    public static Result<User> Create(long companyId, string firstName, string lastName, string email, string mobile, int userType, string password)
     {
         if (String.IsNullOrEmpty(firstName))
         {
@@ -40,15 +52,8 @@ public sealed class User : BaseEntity, IAuditableEntity
 
         string hash = BCrypt.Net.BCrypt.HashPassword(password);
 
-        FirstName = firstName;
-        LastName = lastName;
-        Email = email;
-        Mobile = mobile;
-        Status = 1;
-        UserType = userType;
-        PasswordHash = hash;
-
-        return Result.Success<User>(this);
+        var record = new User(companyId, firstName, lastName, email, mobile, userType, hash);
+        return Result.Success<User>(record);
     }
 
     public Result<User> Update(string firstName, string lastName, string mobile, int status, int userType)
@@ -80,7 +85,16 @@ public sealed class User : BaseEntity, IAuditableEntity
         return Result.Success<User>(this);
     }
 
-    public bool IsValidEmail(string email)
+    public Result<User> ResetPassword(string tempPassword)
+    {
+        string hash = BCrypt.Net.BCrypt.HashPassword(tempPassword);
+        PasswordHash = hash;
+        Mobile = tempPassword;
+        Status = (int)UserStatus.PasswordReset;
+        return Result.Success<User>(this);
+    }
+
+    public static bool IsValidEmail(string email)
     {
         // Define a regular expression pattern for email validation
         string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";

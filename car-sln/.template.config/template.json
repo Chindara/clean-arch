@@ -1,15 +1,15 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Chinthaka Bandara",
-  "classifications": ["ASP.NET", "React"],
-  "identity": "Clean.Architecture.React.Template.CSharp",
+  "classifications": ["ASP.NET", "WebAPI"],
+  "identity": "Clean.Architecture.Template.CSharp",
   "groupIdentity": "Clean.Architecture.Solution",
-  "name": "Clean Architecture with React.js",
-  "shortName": "car-sln",
+  "name": "Clean Architecture",
+  "shortName": "ca-sln",
   "tags": {
     "language": "C#",
     "type": "solution"
   },
   "sourceName": "CleanArchitectureTemplate",
-  "description": "A project template for creating an ASP.NET Core Web API using Clean Architecture and React.js"
+  "description": "A project template for creating an ASP.NET Core Web API using Clean Architecture"
 }

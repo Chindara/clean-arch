@@ -30,12 +30,11 @@ internal class CreateCompanyCommandHandler : IRequestHandler<CreateCompanyComman
 
     public async Task<Result<Company>> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
     {
-        var company = new Company();
-        Result<Company> companyResult = company.CreateCompany(request.Name, request.Address1, request.Address2, request.Address3, request.PostalCode, request.Country, request.Telephone, request.Email, request.Website);
+        Result<Company> companyResult = Company.Create(request.Name, request.Address1, request.Address2, request.Address3, request.PostalCode, request.Country, request.Telephone, request.Email, request.Website);
 
         _companyRepository.Add(companyResult.Value);
         await _unitOfWork.SaveChangesAsync(request.UserId, cancellationToken);
 
-        return Result.Success<Company>(company);
+        return Result.Success<Company>(companyResult.Value);
     }
 }
