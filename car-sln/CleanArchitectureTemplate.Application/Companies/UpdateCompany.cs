@@ -19,16 +19,10 @@ public record UpdateCompanyCommand(
     string Website,
     int Status) : IRequest<Result<Company>>;
 
-internal class UpdateCompanyCommandHandler : IRequestHandler<UpdateCompanyCommand, Result<Company>>
+internal class UpdateCompanyCommandHandler(ICompanyRepository companyRepository, IUnitOfWork unitOfWork) : IRequestHandler<UpdateCompanyCommand, Result<Company>>
 {
-    private readonly ICompanyRepository _companyRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public UpdateCompanyCommandHandler(ICompanyRepository companyRepository, IUnitOfWork unitOfWork)
-    {
-        _companyRepository = companyRepository;
-        _unitOfWork = unitOfWork;
-    }
+    private readonly ICompanyRepository _companyRepository = companyRepository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
     public async Task<Result<Company>> Handle(UpdateCompanyCommand request, CancellationToken cancellationToken)
     {

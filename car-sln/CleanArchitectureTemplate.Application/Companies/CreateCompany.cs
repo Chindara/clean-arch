@@ -17,16 +17,10 @@ public record CreateCompanyCommand(
     string Email,
     string Website) : IRequest<Result<Company>>;
 
-internal class CreateCompanyCommandHandler : IRequestHandler<CreateCompanyCommand, Result<Company>>
+internal class CreateCompanyCommandHandler(ICompanyRepository companyRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateCompanyCommand, Result<Company>>
 {
-    private readonly ICompanyRepository _companyRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public CreateCompanyCommandHandler(ICompanyRepository companyRepository, IUnitOfWork unitOfWork)
-    {
-        _companyRepository = companyRepository;
-        _unitOfWork = unitOfWork;
-    }
+    private readonly ICompanyRepository _companyRepository = companyRepository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
     public async Task<Result<Company>> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
     {

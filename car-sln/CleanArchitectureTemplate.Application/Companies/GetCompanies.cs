@@ -8,14 +8,9 @@ namespace CleanArchitectureTemplate.Application.Companies;
 
 public record GetCompaniesQuery(int Page, int Size) : IRequest<PagedResult<CompaniesResponse>>;
 
-internal class GetCompaniesQueryHandler : IRequestHandler<GetCompaniesQuery, PagedResult<CompaniesResponse>>
+internal class GetCompaniesQueryHandler(IApplicationDbContext context) : IRequestHandler<GetCompaniesQuery, PagedResult<CompaniesResponse>>
 {
-    private readonly IApplicationDbContext _context;
-
-    public GetCompaniesQueryHandler(IApplicationDbContext context)
-    {
-        _context = context;
-    }
+    private readonly IApplicationDbContext _context = context;
 
     public async Task<PagedResult<CompaniesResponse>> Handle(GetCompaniesQuery request, CancellationToken cancellationToken)
     {
