@@ -2,26 +2,15 @@
 using CleanArchitectureTemplate.Domain.Entities;
 using CleanArchitectureTemplate.Domain.Shared;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchitectureTemplate.Application.Users;
 
 public record ResetPasswordCommand(long UserId, long CompanyId, string Email) : IRequest<Result<User>>;
 
-internal class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, Result<User>>
+internal class ResetPasswordCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork) : IRequestHandler<ResetPasswordCommand, Result<User>>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public ResetPasswordCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork)
-    {
-        _userRepository = userRepository;
-        _unitOfWork = unitOfWork;
-    }
+    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
     public async Task<Result<User>> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
     {

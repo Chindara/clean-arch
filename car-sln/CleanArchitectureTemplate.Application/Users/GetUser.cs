@@ -6,14 +6,9 @@ namespace CleanArchitectureTemplate.Application.Users;
 
 public record GetUserQuery(long CompanyId, long Id) : IRequest<UserResponse>;
 
-internal class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserResponse>
+internal class GetUserQueryHandler(IApplicationDbContext context) : IRequestHandler<GetUserQuery, UserResponse>
 {
-    private readonly IApplicationDbContext _context;
-
-    public GetUserQueryHandler(IApplicationDbContext context)
-    {
-        _context = context;
-    }
+    private readonly IApplicationDbContext _context = context;
 
     public async Task<UserResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
     {

@@ -9,16 +9,10 @@ using MediatR;
 namespace CleanArchitectureTemplate.Application.Users;
 public record CreateUserCommand(long CompanyId, long UserId, string FirstName, string LastName, string Email, string Mobile, int UserType) : IRequest<Result<User>>;
 
-internal class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result<User>>
+internal class CreateUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateUserCommand, Result<User>>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public CreateUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork)
-    {
-        _userRepository = userRepository;
-        _unitOfWork = unitOfWork;
-    }
+    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
     public async Task<Result<User>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {

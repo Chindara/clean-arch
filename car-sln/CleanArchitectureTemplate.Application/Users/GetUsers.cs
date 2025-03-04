@@ -8,14 +8,9 @@ namespace CleanArchitectureTemplate.Application.Users;
 
 public record GetUsersQuery(long CompanyId, int Page, int Size) : IRequest<PagedResult<UsersResponse>>;
 
-internal class GetUsersQueryHandler : IRequestHandler<GetUsersQuery, PagedResult<UsersResponse>>
+internal class GetUsersQueryHandler(IApplicationDbContext context) : IRequestHandler<GetUsersQuery, PagedResult<UsersResponse>>
 {
-    private readonly IApplicationDbContext _context;
-
-    public GetUsersQueryHandler(IApplicationDbContext context)
-    {
-        _context = context;
-    }
+    private readonly IApplicationDbContext _context = context;
 
     public async Task<PagedResult<UsersResponse>> Handle(GetUsersQuery request, CancellationToken cancellationToken)
     {

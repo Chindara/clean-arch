@@ -7,16 +7,10 @@ namespace CleanArchitectureTemplate.Application.Users;
 
 public record DeleteUserCommand(long UserId, long CompanyId, long Id) : IRequest<Result<User>>;
 
-internal class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, Result<User>>
+internal class DeleteUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork) : IRequestHandler<DeleteUserCommand, Result<User>>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public DeleteUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork)
-    {
-        _userRepository = userRepository;
-        _unitOfWork = unitOfWork;
-    }
+    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
     public async Task<Result<User>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
     {
