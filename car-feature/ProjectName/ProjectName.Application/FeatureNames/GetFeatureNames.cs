@@ -10,14 +10,9 @@ namespace ProjectName.Application.FeatureNames;
 
 public record GetFeatureNamesQuery(long CompanyId, int Page, int Size) : IRequest<PagedResult<FeatureNamesResponse>>;
 
-internal class GetFeatureNamesQueryHandler : IRequestHandler<GetFeatureNamesQuery, PagedResult<FeatureNamesResponse>>
+internal class GetFeatureNamesQueryHandler(IApplicationDbContext context) : IRequestHandler<GetFeatureNamesQuery, PagedResult<FeatureNamesResponse>>
 {
-    private readonly IApplicationDbContext _context;
-
-    public GetFeatureNamesQueryHandler(IApplicationDbContext context)
-    {
-        _context = context;
-    }
+    private readonly IApplicationDbContext _context = context;
 
     public async Task<PagedResult<FeatureNamesResponse>> Handle(GetFeatureNamesQuery request, CancellationToken cancellationToken)
     {
