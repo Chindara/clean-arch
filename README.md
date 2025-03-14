@@ -38,13 +38,13 @@ dotnet new ca-sln -o "<Name of the project>"
 ```
 
 ### Configurations
-Once the solution is created, go to appsettings.json file & update the followings
+Once the solution is created, go to `appsettings.json` file & update the followings
 
 #### Database (MSSQL Server)
-"ConnectionStrings" section with your connection string.
+`"ConnectionStrings"` section with your connection string.
 
 #### Email (MailTrap)
- "EmailSettings" section with your [MailTrap](https://mailtrap.io/) details.
+ `"EmailSettings"` section with your [MailTrap](https://mailtrap.io/) details.
 
 
 ## Create a new feature
