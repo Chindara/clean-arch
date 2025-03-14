@@ -1,5 +1,6 @@
 ﻿// Ignore Spelling: Validator
 
+using CleanArchitectureTemplate.Application.Contracts;
 using CleanArchitectureTemplate.Domain.Abstractions;
 using CleanArchitectureTemplate.Domain.Entities;
 using CleanArchitectureTemplate.Domain.Shared;

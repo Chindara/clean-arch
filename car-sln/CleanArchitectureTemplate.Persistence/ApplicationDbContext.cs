@@ -1,4 +1,5 @@
-﻿using CleanArchitectureTemplate.Domain.Entities;
+﻿using CleanArchitectureTemplate.Application.Contracts;
+using CleanArchitectureTemplate.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitectureTemplate.Persistence;

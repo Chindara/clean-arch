@@ -1,4 +1,4 @@
-﻿using CleanArchitectureTemplate.Persistence;
+﻿using CleanArchitectureTemplate.Application.Contracts;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureTemplate.Domain.Abstractions;
+﻿namespace CleanArchitectureTemplate.Application.Contracts;
 
 public interface IUnitOfWork
 {
