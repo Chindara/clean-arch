@@ -1,7 +1,7 @@
-﻿using CleanArchitectureTemplate.Application.DTO;
+﻿using CleanArchitectureTemplate.Application.Contracts;
+using CleanArchitectureTemplate.Application.DTO;
 using CleanArchitectureTemplate.Domain.Entities;
 using CleanArchitectureTemplate.Domain.Primitives;
-using CleanArchitectureTemplate.Persistence;
 using MediatR;
 
 namespace CleanArchitectureTemplate.Application.Users;

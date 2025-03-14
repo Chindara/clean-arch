@@ -1,7 +1,7 @@
 ﻿using CleanArchitectureTemplate.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitectureTemplate.Persistence;
+namespace CleanArchitectureTemplate.Application.Contracts;
 
 public interface IApplicationDbContext
 {

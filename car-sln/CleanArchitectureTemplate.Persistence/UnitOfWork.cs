@@ -1,4 +1,5 @@
-﻿using CleanArchitectureTemplate.Domain.Abstractions;
+﻿using CleanArchitectureTemplate.Application.Contracts;
+using CleanArchitectureTemplate.Domain.Abstractions;
 using CleanArchitectureTemplate.Domain.Primitives;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;

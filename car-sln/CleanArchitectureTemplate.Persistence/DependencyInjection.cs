@@ -1,4 +1,5 @@
-﻿using CleanArchitectureTemplate.Domain.Abstractions;
+﻿using CleanArchitectureTemplate.Application.Contracts;
+using CleanArchitectureTemplate.Domain.Abstractions;
 using CleanArchitectureTemplate.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
