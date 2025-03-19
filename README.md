@@ -4,31 +4,6 @@ This template provides a seamless solution by integrating the benefits of Clean 
 
 If you find this project useful, please give it a star. Thanks! ⭐
 
-## Getting Started
-
-The following prerequisites are required to build and run the solution:
-
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (latest version)
-
-Clone the repository to your computer. Once you are inside the root directory run the following command in PowerShell
-
-```
-dotnet new install .
-```
-
-### Create a new solution
-Use the following command to create the Clean Architecture WebAPI solution
-
-```
-dotnet new ca-sln -o "<Name of the project>"
-```
-Once the solution is created replace the database credentials in the "appsettings.json" file.
-
-### Create a new feature
-```
-dotnet new ca-feature -p <Name of the project> -f <Name of the feature>
-```
-
 ## Technologies
 
 ![.NET 8](https://i.imgur.com/quop3E8.png)
@@ -36,14 +11,43 @@ dotnet new ca-feature -p <Name of the project> -f <Name of the feature>
 ![Serilog](https://i.imgur.com/i8xjWjs.png)
 ![Mediatr](https://i.imgur.com/orjrsa3.png)
 ![Fluent Validation](https://i.imgur.com/acPuZJW.png)
+![MailTrap](https://i.imgur.com/OpILNdy.png)
 
-### Template Commands
+## Getting Started
+
+The following prerequisites are required to build and run the solution:
+
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (Latest version)
+- [MailTrap](https://mailtrap.io/) (If you are using the email feature)
+
+Clone the repository to your computer. Once you are inside the root directory run the following command in PowerShell
+
+`dotnet new list` - Lists available templates to be run using `dotnet new`.
+
+`dotnet new install .` - Installs the template
+
+`dotnet new install . --force` - Force Installs the template
+
+`dotnet new uninstall` - Uninstalls the template
+
+## Create a new solution
+Use the following command to create the Clean Architecture WebAPI solution
+
+```dotnetcli
+dotnet new ca-sln -o "<Name of the project>"
 ```
-dotnet new list
+
+### Configurations
+Once the solution is created, go to `appsettings.json` file & update the followings
+
+#### Database (MSSQL Server)
+`"ConnectionStrings"` section with your connection string.
+
+#### Email (MailTrap)
+ `"EmailSettings"` section with your [MailTrap](https://mailtrap.io/) details.
+
+
+## Create a new feature
 ```
-```
-dotnet new install . --force
-```
-```
-dotnet new uninstall
+dotnet new ca-feature -p <Name of the project> -f <Name of the feature>
 ```
