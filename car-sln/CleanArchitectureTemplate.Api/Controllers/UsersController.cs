@@ -1,10 +1,10 @@
 ﻿using CleanArchitectureTemplate.Application.DTO;
 using CleanArchitectureTemplate.Application.Users;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitectureTemplate.Api.Controllers;
+
 [Route("api/[controller]")]
 [ApiController]
 public class UsersController : ControllerBase

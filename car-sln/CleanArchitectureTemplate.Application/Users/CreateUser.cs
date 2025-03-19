@@ -6,14 +6,17 @@ using CleanArchitectureTemplate.Domain.Entities;
 using CleanArchitectureTemplate.Domain.Shared;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CleanArchitectureTemplate.Application.Users;
 public record CreateUserCommand(long CompanyId, long UserId, string FirstName, string LastName, string Email, string Mobile, int UserType) : IRequest<Result<User>>;
 
-internal class CreateUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateUserCommand, Result<User>>
+internal class CreateUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork, IEmailSender emailSender, IWebHostEnvironment environment) : IRequestHandler<CreateUserCommand, Result<User>>
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
+    private readonly IEmailSender _emailSender = emailSender;
+    private readonly IWebHostEnvironment _environment = environment;
 
     public async Task<Result<User>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
@@ -34,6 +37,15 @@ internal class CreateUserCommandHandler(IUserRepository userRepository, IUnitOfW
 
         _userRepository.Add(newUserResult.Value);
         await _unitOfWork.SaveChangesAsync(request.UserId, cancellationToken);
+
+        await _emailSender.SendEmailAsync(new DTO.EmailMessage()
+        {
+            Category = "New User",
+            ToEmail = newUserResult.Value.Email,
+            ToName = newUserResult.Value.FullName,
+            Subject = "Welcome to CA",
+            Body = EmailTemplates.NewUser(_environment.WebRootPath, newUserResult.Value.FullName, newUserResult.Value.Email, password)
+        });
 
         return Result.Success<User>(newUserResult.Value);
     }
