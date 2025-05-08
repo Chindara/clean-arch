@@ -20,13 +20,9 @@ The following prerequisites are required to build and run the solution:
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (Latest version)
 - [MailTrap](https://mailtrap.io/) (If you are using the email feature)
 
-Clone the repository to your computer. Once you are inside the root directory run the following command in PowerShell
+`dotnet new install Clean.Architecture.Template.CSharp::1.0.2` - This command will install .NET template from Nuget
 
 `dotnet new list` - Lists available templates to be run using `dotnet new`.
-
-`dotnet new install .` - Installs the template
-
-`dotnet new install . --force` - Force Installs the template
 
 `dotnet new uninstall` - Uninstalls the template
 
@@ -45,9 +41,3 @@ Once the solution is created, go to `appsettings.json` file & update the followi
 
 #### Email (MailTrap)
  `"EmailSettings"` section with your [MailTrap](https://mailtrap.io/) details.
-
-
-## Create a new feature
-```
-dotnet new ca-feature -p <Name of the project> -f <Name of the feature>
-```

@@ -6,11 +6,11 @@ namespace CleanArchitectureTemplate.Domain.Entities;
 
 public sealed class User : BaseEntity, IAuditableEntity
 {
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public string Email { get; private set; }
-    public string Mobile { get; private set; }
-    public string PasswordHash { get; private set; }
+    public string FirstName { get; private set; } = null!;
+    public string LastName { get; private set; } = null!;
+    public string Email { get; private set; } = null!;
+    public string Mobile { get; private set; } = null!;
+    public string PasswordHash { get; private set; } = null!;
     public int Status { get; private set; }
     public int UserType { get; private set; }
     public DateTime Created { get; set; }
@@ -19,7 +19,7 @@ public sealed class User : BaseEntity, IAuditableEntity
     public long ModifiedBy { get; set; }
     public string FullName => FirstName + " " + LastName;
 
-    protected User() : base(default)
+    private User() : base(default)
     {
         // Parameterless constructor for EF Core
     }

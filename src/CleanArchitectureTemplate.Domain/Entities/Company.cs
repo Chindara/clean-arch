@@ -6,8 +6,8 @@ namespace CleanArchitectureTemplate.Domain.Entities;
 public sealed class Company : IAuditableEntity
 {
     public long Id { get; private set; }
-    public string Name { get; private set; }
-    public string Address1 { get; private set; }
+    public string Name { get; private set; } = null!;
+    public string Address1 { get; private set; } = null!;
     public string? Address2 { get; private set; }
     public string? Address3 { get; private set; }
     public string? PostalCode { get; private set; }
@@ -23,7 +23,7 @@ public sealed class Company : IAuditableEntity
 
     public string FullAddress => (Address1 + ", " + Address2 + ", " + Address3 + ", " + Country + ", " + PostalCode).TrimEnd().TrimEnd(',').TrimEnd().TrimEnd(',').TrimEnd().TrimEnd(',').TrimEnd().TrimEnd(',');
 
-    protected Company()
+    private Company()
     {
         // Parameterless constructor for EF Core
     }
