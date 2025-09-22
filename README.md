@@ -22,7 +22,7 @@ The following prerequisites are required to build and run the solution:
 
 Run the following command to install the [.NET template](https://www.nuget.org/packages/Clean.Architecture.Template.CSharp) from NuGet
 ```dotnetcli
-dotnet new install Clean.Architecture.Template.CSharp::1.0.2
+dotnet new install Clean.Architecture.Template.CSharp::1.0.3
 ```
 
 `dotnet new list` - Lists available templates to be run using `dotnet new`.
@@ -44,3 +44,4 @@ Once the solution is created, go to `appsettings.json` file & update the followi
 
 #### Email (MailTrap)
  `"EmailSettings"` section with your [MailTrap](https://mailtrap.io/) details.
+
