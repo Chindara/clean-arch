@@ -20,9 +20,9 @@ The following prerequisites are required to build and run the solution:
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (Latest version)
 - [MailTrap](https://mailtrap.io/) (If you are using the email feature)
 
-Run the following command to install the .NET template from Nuget
+Run the following command to install the [.NET template](https://www.nuget.org/packages/Clean.Architecture.Template.CSharp) from NuGet
 ```dotnetcli
-dotnet new install Clean.Architecture.Template.CSharp::1.0.2
+dotnet new install Clean.Architecture.Template.CSharp::1.0.3
 ```
 
 `dotnet new list` - Lists available templates to be run using `dotnet new`.
