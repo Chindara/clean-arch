@@ -45,3 +45,9 @@ Once the solution is created, go to `appsettings.json` file & update the followi
 #### Email (MailTrap)
  `"EmailSettings"` section with your [MailTrap](https://mailtrap.io/) details.
 
+ ## Build Nuget Package
+ - Update the Version in `CleanArchitectureTemplate.csproj` file
+ - Run the below command
+```dotnetcli
+dotnet pack CleanArchitectureTemplate.csproj -c Release -o ./nupkgs
+```
