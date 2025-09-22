@@ -1,49 +1,48 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <!-- Template Metadata -->
     <PackageType>Template</PackageType>
     <PackageId>Clean.Architecture.Template.CSharp</PackageId>
     <Title>Clean Architecture Solution Template</Title>
     <Authors>Chinthaka Bandara</Authors>
     <Description>A Clean Architecture Web API solution template for .NET 8</Description>
     <PackageTags>clean-architecture;project;template;csharp;dotnet;web-api</PackageTags>
-    <TargetFramework>net8.0</TargetFramework>
+    
+    <!-- Versioning -->
+    <Version>1.0.3</Version>
+    
+    <!-- Pack settings -->
+    <IsPackable>true</IsPackable>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-    <ContentTargetFolders>content</ContentTargetFolders>
-    <NoDefaultExcludes>true</NoDefaultExcludes>
-    <NoWarn>$(NoWarn);NU5128</NoWarn>
-    <Version>1.0.2</Version>
-    <PackageOutputPath>./nupkgs</PackageOutputPath>
-    <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>./nupkgs</PackageOutputPath>
+	<NoDefaultExcludes>true</NoDefaultExcludes>
+	<IncludeBuildOutput>false</IncludeBuildOutput>
+	<PackAsTool>false</PackAsTool>
     
-    <!-- License Information -->
+    <!-- License and repository info -->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright © 2025 Chinthaka Bandara</Copyright>
     <RepositoryUrl>https://github.com/Chindara/clean-arch</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/Chindara/clean-arch</PackageProjectUrl>
-    
-    <!-- README inclusion -->
+    <Copyright>Copyright © 2025 Chinthaka Bandara</Copyright>
+
+    <!-- README -->
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    
+    <!-- TargetFramework for packing only -->
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <!-- Include source files but exclude README.md from content that gets copied to template -->
-    <Content Include="src\**\*" Exclude="src\**\bin\**;src\**\obj\**;src\**\.vs\**;src\**\.git\**;src\**\*.user;src\**\*.lock.json;src\**\.DS_Store;src\**\node_modules\**;src\Template\**;src\packages\**;src\nupkgs\**" />
-    <Content Remove="README.md" />
-	<Content Remove="CleanArchitectureTemplate.csproj" />
-    <Compile Remove="**\*" />
+    <!-- Include all template files (solution, projects, .template.config) -->
+    <None Include="**\*.*" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**;**\*.user;**\*.lock.json;**\.DS_Store;**\node_modules\**;Template\**;packages\**;nupkgs\**" Pack="true" PackagePath="contentFiles\any\any" />
   </ItemGroup>
   
-  <!-- Include README.md for package documentation only -->
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
     <None Include="LICENSE" Pack="true" PackagePath="\" />
   </ItemGroup>
-  
-  <!-- Add a .template.config/template.json file to explicitly exclude README.md -->
-  <ItemGroup>
-    <Content Include=".template.config\template.json" />
-  </ItemGroup>
+
 </Project>
