@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Chinthaka Bandara",
+  "classifications": ["ASP.NET", "WebAPI"],
+  "identity": "Clean.Architecture.Feature",
+  "groupIdentity": "Clean.Architecture",
+  "name": "Clean Architecture Feature",
+  "shortName": "ca-feat",
+  "preferNameDirectory": true,
+  "sourceName": "CleanArchitectureTemplate",
+  "description": "ASP.NET Core Web API using Clean Architecture",
+
+  "symbols": {
+    "ProjectName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "replaces": "CleanArchitectureTemplate",
+      "fileRename": "CleanArchitectureTemplate"
+    },
+    "FeatureName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "replaces": "FeatureName",
+      "fileRename": "FeatureName"
+    },
+    "FeatureNamePlural": {
+      "type": "derived",
+      "datatype": "string",
+      "replaces": "FeatureNamePlural",
+      "fileRename": "FeatureNamePlural",
+      "valueSource": "FeatureName",
+      "valueTransform": "appendS"
+    }
+  },
+  "forms": {
+    "appendS": {
+      "identifier": "replace",
+      "pattern": "^(.*)$",
+      "replacement": "$1s"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  }
+}

@@ -25,16 +25,21 @@ Run the following command to install the [.NET template](https://www.nuget.org/p
 dotnet new install Clean.Architecture.Template.CSharp::1.0.3
 ```
 
-`dotnet new list` - Lists available templates to be run using `dotnet new`.
-
-`dotnet new uninstall` - Uninstalls the template
-
-## Create a new solution
-Use the following command to create the Clean Architecture WebAPI solution
+Once installed, create a new solution using this template
 
 ```dotnetcli
 dotnet new ca-sln -o "<Name of the project>"
 ```
+
+To create a new feature by navigate into the root folder & run the below command
+
+```dotnetcli
+dotnet new ca-feat --ProjectName "<Name of the project>" --FeatureName "<Name of the feature>"
+```
+
+`dotnet new list` - Lists available templates to be run using `dotnet new`.
+
+`dotnet new uninstall` - Uninstalls the template
 
 ### Configurations
 Once the solution is created, go to `appsettings.json` file & update the followings
@@ -44,10 +49,3 @@ Once the solution is created, go to `appsettings.json` file & update the followi
 
 #### Email (MailTrap)
  `"EmailSettings"` section with your [MailTrap](https://mailtrap.io/) details.
-
- ## Build Nuget Package
- - Update the Version in `CleanArchitectureTemplate.csproj` file
- - Run the below command
-```dotnetcli
-dotnet pack CleanArchitectureTemplate.csproj -c Release -o ./nupkgs
-```
