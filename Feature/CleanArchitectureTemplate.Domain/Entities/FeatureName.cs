@@ -1,13 +1,16 @@
+using CleanArchitectureTemplate.Domain.Primitives;
+using CleanArchitectureTemplate.Domain.Shared;
+
+namespace CleanArchitectureTemplate.Domain.Entities;
+
 public sealed class FeatureName : BaseEntity, IAuditableEntity
 {
     public string Name { get; set; }
 
-    public DateTime CreatedDateTime { get; set; }
-    public long CreatedUser { get; set; }
-    public string CreatedMachine { get; set; }
-    public DateTime ModifiedDateTime { get; set; }
-    public long ModifiedUser { get; set; }
-    public string ModifiedMachine { get; set; }
+    public DateTime Created { get; set; }
+    public long CreatedBy { get; set; }
+    public DateTime Modified { get; set; }
+    public long ModifiedBy { get; set; }
 
     protected FeatureName() : base(default)
     {
@@ -19,7 +22,7 @@ public sealed class FeatureName : BaseEntity, IAuditableEntity
         Name = name;
     }
 
-    public static Create(long companyId, string name)
+    public static Result<FeatureName> Create(long companyId, string name)
     {
         if (String.IsNullOrEmpty(name))
             return Result.Failure<FeatureName>(new Error("FeatureName.Create", "Name is required"));
