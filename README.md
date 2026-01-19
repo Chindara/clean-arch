@@ -22,7 +22,7 @@ The following prerequisites are required to build and run the solution:
 
 Run the following command to install the [.NET template](https://www.nuget.org/packages/Clean.Architecture.Template.CSharp) from NuGet
 ```dotnetcli
-dotnet new install Clean.Architecture.Template.CSharp::1.0.3
+dotnet new install Clean.Architecture.Template.CSharp::1.0.4
 ```
 
 Once installed, create a new solution using this template

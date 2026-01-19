@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Clean.Architecture.Template.CSharp</id>
+    <version>1.0.4</version>
+    <title>Clean Architecture Solution Template</title>
+    <authors>Chinthaka Bandara</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/Chindara/clean-arch</projectUrl>
+    <description>A Clean Architecture Web API solution template for .NET 8</description>
+    <copyright>Copyright © 2025 Chinthaka Bandara</copyright>
+    <tags>clean-architecture project template csharp dotnet web-api</tags>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/Chindara/clean-arch" commit="8b2d5f2701d1934a1a4aea29d2dcad08e0b3f52f" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+    <contentFiles>
+      <files include="any/any/CleanArchitectureTemplate.csproj" buildAction="None" />
+      <files include="any/any/Feature/.template.config/icon.png" buildAction="None" />
+      <files include="any/any/Feature/.template.config/template.json" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Api/Controllers/FeatureNamePluralController.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Application/FeatureNames/CreateFeatureName.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Application/FeatureNames/DeleteFeatureName.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Application/FeatureNames/GetFeatureName.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Application/FeatureNames/GetFeatureNames.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Application/FeatureNames/Responses.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Application/FeatureNames/UpdateFeatureName.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Domain/Abstractions/IFeatureNameRepository.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Domain/Entities/FeatureName.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Persistence/Configurations/FeatureNameConfiguration.cs" buildAction="None" />
+      <files include="any/any/Feature/CleanArchitectureTemplate.Persistence/Repositories/FeatureNameRepository.cs" buildAction="None" />
+      <files include="any/any/LICENSE" buildAction="None" />
+      <files include="any/any/README.md" buildAction="None" />
+      <files include="any/any/Solution/.gitignore" buildAction="None" />
+      <files include="any/any/Solution/.template.config/icon.png" buildAction="None" />
+      <files include="any/any/Solution/.template.config/template.json" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/appsettings.Development.json" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/appsettings.json" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/CleanArchitectureTemplate.Api.csproj" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/Controllers/CompaniesController.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/Controllers/UsersController.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/Program.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/Properties/launchSettings.json" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Api/wwwroot/EmailTemplates/NewUser.html" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/CleanArchitectureTemplate.Application.csproj" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Companies/CreateCompany.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Companies/GetCompanies.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Companies/GetCompany.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Companies/Responses.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Companies/UpdateCompany.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Contracts/IApplicationDbContext.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Contracts/IEmailSender.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Contracts/IUnitOfWork.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/DependencyInjection.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/DTO/ComboResponse.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/DTO/EmailMessage.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/DTO/PagedResult.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/EmailTemplates.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/CreateUser.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/DeleteUser.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/GetUser.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/GetUsers.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/ResetPassword.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/UpdateUser.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Application/Users/UserDtos.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Abstractions/ICompanyRepository.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Abstractions/IUserRepository.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/CleanArchitectureTemplate.Domain.csproj" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Entities/Company.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Entities/User.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Primitives/BaseEntity.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Primitives/Enums.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Primitives/IAuditableEntity.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Shared/Error.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Domain/Shared/Result.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Infrastructure/CleanArchitectureTemplate.Infrastructure.csproj" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Infrastructure/Configurations/EmailConfiguration.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Infrastructure/DependencyInjection.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Infrastructure/SmtpEmailSender.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/ApplicationDbContext.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/CleanArchitectureTemplate.Persistence.csproj" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Configurations/CompanyConfiguration.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Configurations/UserConfiguration.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/DependencyInjection.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Migrations/20240807090048_Init.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Migrations/20240807090048_Init.Designer.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Migrations/ApplicationDbContextModelSnapshot.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Repositories/CompanyRepository.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/Repositories/UserRepository.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.Persistence/UnitOfWork.cs" buildAction="None" />
+      <files include="any/any/Solution/CleanArchitectureTemplate.sln" buildAction="None" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\CleanArchitectureTemplate.csproj" target="contentFiles\any\any\CleanArchitectureTemplate.csproj" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\.template.config\icon.png" target="contentFiles\any\any\Feature\.template.config\icon.png" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\.template.config\template.json" target="contentFiles\any\any\Feature\.template.config\template.json" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Api\Controllers\FeatureNamePluralController.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Api\Controllers\FeatureNamePluralController.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Application\FeatureNames\CreateFeatureName.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Application\FeatureNames\CreateFeatureName.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Application\FeatureNames\DeleteFeatureName.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Application\FeatureNames\DeleteFeatureName.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Application\FeatureNames\GetFeatureName.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Application\FeatureNames\GetFeatureName.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Application\FeatureNames\GetFeatureNames.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Application\FeatureNames\GetFeatureNames.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Application\FeatureNames\Responses.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Application\FeatureNames\Responses.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Application\FeatureNames\UpdateFeatureName.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Application\FeatureNames\UpdateFeatureName.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Domain\Abstractions\IFeatureNameRepository.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Domain\Abstractions\IFeatureNameRepository.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Domain\Entities\FeatureName.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Domain\Entities\FeatureName.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Persistence\Configurations\FeatureNameConfiguration.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Persistence\Configurations\FeatureNameConfiguration.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Feature\CleanArchitectureTemplate.Persistence\Repositories\FeatureNameRepository.cs" target="contentFiles\any\any\Feature\CleanArchitectureTemplate.Persistence\Repositories\FeatureNameRepository.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\LICENSE" target="contentFiles\any\any\LICENSE" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\LICENSE" target="\LICENSE" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\README.md" target="contentFiles\any\any\README.md" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\README.md" target="\README.md" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\.gitignore" target="contentFiles\any\any\Solution\.gitignore" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\.template.config\icon.png" target="contentFiles\any\any\Solution\.template.config\icon.png" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\.template.config\template.json" target="contentFiles\any\any\Solution\.template.config\template.json" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\appsettings.Development.json" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\appsettings.Development.json" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\appsettings.json" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\appsettings.json" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\CleanArchitectureTemplate.Api.csproj" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\CleanArchitectureTemplate.Api.csproj" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\Controllers\CompaniesController.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\Controllers\CompaniesController.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\Controllers\UsersController.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\Controllers\UsersController.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\Program.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\Program.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\Properties\launchSettings.json" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\Properties\launchSettings.json" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Api\wwwroot\EmailTemplates\NewUser.html" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Api\wwwroot\EmailTemplates\NewUser.html" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\CleanArchitectureTemplate.Application.csproj" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\CleanArchitectureTemplate.Application.csproj" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Companies\CreateCompany.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Companies\CreateCompany.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Companies\GetCompanies.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Companies\GetCompanies.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Companies\GetCompany.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Companies\GetCompany.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Companies\Responses.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Companies\Responses.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Companies\UpdateCompany.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Companies\UpdateCompany.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Contracts\IApplicationDbContext.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Contracts\IApplicationDbContext.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Contracts\IEmailSender.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Contracts\IEmailSender.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Contracts\IUnitOfWork.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Contracts\IUnitOfWork.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\DependencyInjection.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\DependencyInjection.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\DTO\ComboResponse.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\DTO\ComboResponse.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\DTO\EmailMessage.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\DTO\EmailMessage.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\DTO\PagedResult.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\DTO\PagedResult.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\EmailTemplates.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\EmailTemplates.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\CreateUser.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\CreateUser.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\DeleteUser.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\DeleteUser.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\GetUser.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\GetUser.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\GetUsers.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\GetUsers.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\ResetPassword.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\ResetPassword.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\UpdateUser.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\UpdateUser.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Application\Users\UserDtos.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Application\Users\UserDtos.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Abstractions\ICompanyRepository.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Abstractions\ICompanyRepository.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Abstractions\IUserRepository.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Abstractions\IUserRepository.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\CleanArchitectureTemplate.Domain.csproj" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\CleanArchitectureTemplate.Domain.csproj" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Entities\Company.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Entities\Company.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Entities\User.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Entities\User.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Primitives\BaseEntity.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Primitives\BaseEntity.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Primitives\Enums.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Primitives\Enums.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Primitives\IAuditableEntity.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Primitives\IAuditableEntity.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Shared\Error.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Shared\Error.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Domain\Shared\Result.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Domain\Shared\Result.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Infrastructure\CleanArchitectureTemplate.Infrastructure.csproj" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Infrastructure\CleanArchitectureTemplate.Infrastructure.csproj" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Infrastructure\Configurations\EmailConfiguration.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Infrastructure\Configurations\EmailConfiguration.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Infrastructure\DependencyInjection.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Infrastructure\DependencyInjection.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Infrastructure\SmtpEmailSender.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Infrastructure\SmtpEmailSender.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\ApplicationDbContext.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\ApplicationDbContext.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\CleanArchitectureTemplate.Persistence.csproj" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\CleanArchitectureTemplate.Persistence.csproj" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Configurations\CompanyConfiguration.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Configurations\CompanyConfiguration.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Configurations\UserConfiguration.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Configurations\UserConfiguration.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\DependencyInjection.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\DependencyInjection.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Migrations\20240807090048_Init.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Migrations\20240807090048_Init.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Migrations\20240807090048_Init.Designer.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Migrations\20240807090048_Init.Designer.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Migrations\ApplicationDbContextModelSnapshot.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Repositories\CompanyRepository.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Repositories\CompanyRepository.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\Repositories\UserRepository.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\Repositories\UserRepository.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.Persistence\UnitOfWork.cs" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.Persistence\UnitOfWork.cs" />
+    <file src="C:\Users\chinthakab\Documents\Source\Personal GitHub\clean-arch\Solution\CleanArchitectureTemplate.sln" target="contentFiles\any\any\Solution\CleanArchitectureTemplate.sln" />
+  </files>
+</package>
