@@ -3,7 +3,6 @@
   "author": "Chinthaka Bandara",
   "classifications": ["ASP.NET", "WebAPI"],
   "identity": "Clean.Architecture.Solution",
-  "groupIdentity": "Clean.Architecture",
   "name": "Clean Architecture Solution",
   "shortName": "ca-sln",
   "preferNameDirectory": true,
