@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\chinthakab\\Documents\\Source\\Personal GitHub\\clean-arch\\CleanArchitectureTemplate.csproj": {
-      "version": "1.0.4",
+      "version": "1.0.5",
       "restore": {
         "projectUniqueName": "C:\\Users\\chinthakab\\Documents\\Source\\Personal GitHub\\clean-arch\\CleanArchitectureTemplate.csproj",
         "projectName": "Clean.Architecture.Template.CSharp",
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "netstandard2.0": {
@@ -69,7 +69,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.107\\RuntimeIdentifierGraph.json"
         }
       }
     }
